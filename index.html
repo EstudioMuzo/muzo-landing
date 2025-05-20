@@ -192,32 +192,32 @@
     <div class="mb-10">
         <h2 class="text-3xl font-semibold mb-6">Arquitectura</h2>
         <div class="flex flex-wrap gap-4 text-gray-800 text-sm border-b pb-4">
-            <a href="#" class="text-green-700 font-medium border-b-2 border-green-700 pb-1">Diseño de planta</a>
-            <a href="#" class="hover:text-green-700">Fachada</a>
-            <a href="#" class="hover:text-green-700">Interiorismo</a>
-            <a href="#" class="hover:text-green-700">Proyecto ejecutivo</a>
-            <a href="#" class="hover:text-green-700">Dirección de obra</a>
-            <a href="#" class="hover:text-green-700">Renders y 3D</a>
+            <button onclick="showTab('planta')" id="tab-planta" class="text-green-700 font-medium border-b-2 border-green-700 pb-1">Diseño de planta</button>
+            <button onclick="showTab('fachada')" id="tab-fachada" class="hover:text-green-700">Fachada</button>
+            <button onclick="showTab('interiorismo')" id="tab-interiorismo" class="hover:text-green-700">Interiorismo</button>
+            <button onclick="showTab('ejecutivo')" id="tab-ejecutivo" class="hover:text-green-700">Proyecto ejecutivo</button>
+            <button onclick="showTab('obra')" id="tab-obra" class="hover:text-green-700">Dirección de obra</button>
+            <button onclick="showTab('renders')" id="tab-renders" class="hover:text-green-700">Renders y 3D</button>
         </div>
     </div>
 
     <!-- Case Study -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-end mb-20">
         <!-- Text -->
-        <div>
+        <div class="w-4/5">
             <p class="text-xs text-gray-500 uppercase tracking-wide mb-2">Caso de estudio</p>
-            <h3 class="text-xl font-semibold mb-4">Casa pilinco 45</h3>
-            <p class="text-gray-800 leading-relaxed">
-                Diseñar una planta es imaginar cómo se vive un espacio antes de que exista. Es pensar en recorridos, visuales, luz natural, proporciones, relaciones entre ambientes y su relación con el entorno. Cada espacio se adaptó a la forma del terreno, a su orientación, sus árboles y un quincho existente el cual unificamos con la casa a través de un patio seco y la piscina.
+            <h3 id="project-title" class="text-xl font-semibold mb-4">Casa Pilinco 45</h3>
+            <p id="project-paragraph-1" class="text-gray-800 leading-relaxed">
+                Diseñar una planta es imaginar cómo se vive un espacio antes de que exista. Es pensar en recorridos, visuales, luz natural, proporciones, relaciones entre ambientes y su relación con el entorno. Cada espacio se adaptó a la forma del terreno, a su orientacion, sus arboles y un quincho existente el cual unificamos con la casa a traves de un patio seco y la piscina.
             </p>
-            <p class="text-gray-900 font-medium mt-4">
-                Sus dueños aman las curvas, lo orgánico y lo natural. Desde ese eje se planteó cada trazo de esta casa y cada decisión se tomó en conjunto con quienes van a habitarla, interpretando sus necesidades, sus modos de vivir y sus deseos.
+            <p id="project-paragraph-2" class="text-gray-900 font-medium mt-4">
+                Sus dueños aman las curvas, lo organico y lo natural. Desde ese eje se planteó cada trazo de esta casa y cada decisión se tomó en conjunto con quienes van a habitarla, interpretando sus necesidades, sus modos de vivir y sus deseos.
             </p>
         </div>
 
         <!-- Image -->
         <div>
-            <img src="architecture-project.jpg" alt="Casa Pilinco 45" class="w-full rounded-md shadow-md object-cover" />
+            <img src="architecture-project.jpg" alt="Proyecto de arquitectura" class="w-full rounded-md shadow-md object-cover" />
         </div>
     </div>
 
@@ -394,7 +394,7 @@
                     <div>
                         <h4 class="font-semibold text-lg">Innovadores</h4>
                         <p class="text-gray-700 mt-1 text-sm">
-                            La innovación en Muzo es un pilar clave para ofrecer soluciones arquitectónicas <span class="font-semibold">vanguardistas</span> que integran tecnología y diseño de manera fluida.
+                            En MUZO diseñamos espacios que inspiran y emocionan. Nuestra arquitectura combina calidez, detalle e innovación para transformar ideas en lugares con alma. Creamos viviendas, locales y espacios industriales con una mirada sensible y comprometida, cuidando cada etapa del proceso. Porque sabemos que los espacios bien pensados pueden transformar lo cotidiano en momentos memorables.
                         </p>
                     </div>
                 </div>
@@ -500,5 +500,62 @@
 
     // Auto-play every 5 seconds
     setInterval(nextSlide, 5000);
+
+    function showTab(tab) {
+        // Reset all tabs
+        document.querySelectorAll('[id^="tab-"]').forEach(el => {
+            el.classList.remove('text-green-700', 'font-medium', 'border-b-2', 'border-green-700', 'pb-1');
+        });
+
+        // Activate clicked tab
+        const activeTab = document.getElementById(`tab-${tab}`);
+        activeTab.classList.add('text-green-700', 'font-medium', 'border-b-2', 'border-green-700', 'pb-1');
+
+        // Update content
+        if (tab === 'planta') {
+            document.getElementById('project-title').textContent = "Casa Pilinco 45";
+            document.getElementById('project-paragraph-1').textContent =
+                "Diseñar una planta es imaginar cómo se vive un espacio antes de que exista. Es pensar en recorridos, visuales, luz natural, proporciones, relaciones entre ambientes y su relación con el entorno. Cada espacio se adaptó a la forma del terreno, a su orientacion, sus arboles y un quincho existente el cual unificamos con la casa a traves de un patio seco y la piscina.";
+            document.getElementById('project-paragraph-2').textContent =
+                "Sus dueños aman las curvas, lo organico y lo natural. Desde ese eje se planteó cada trazo de esta casa y cada decisión se tomó en conjunto con quienes van a habitarla, interpretando sus necesidades, sus modos de vivir y sus deseos.";
+        }
+
+        if (tab === 'fachada') {
+            document.getElementById('project-title').textContent = "Puelche 42";
+            document.getElementById('project-paragraph-1').innerHTML =
+                "La fachada es la primera impresión y una declaración de identidad. En esta casa diseñamos un revestimiento auténtico que refleja su carácter cálido y contemporáneo.";
+            document.getElementById('project-paragraph-2').textContent =
+                "Tras una cuidadosa búsqueda de materiales, colores y texturas, dimos con una solución que combina fuerza y permanencia. Cada elemento exterior, desde los accesos hasta los canteros, se integró para aportar calidez, privacidad y coherencia al diseño.";
+        }
+
+        if (tab === 'interiorismo') {
+            document.getElementById('project-title').textContent = "Nahuel 14";
+            document.getElementById('project-paragraph-1').textContent =
+                "El interior es donde la arquitectura se transforma en experiencia. En cada casa, el diseño interior prolonga el espíritu del proyecto, definiendo cómo se vive cada espacio. Usamos materiales nobles y texturas cálidas para crear ambientes pensados al detalle.";
+            document.getElementById('project-paragraph-2').textContent =
+                "En Nahuel 14, aprovechamos al máximo el bajo escalera, creando un núcleo funcional que organiza el espacio: hacia el acceso, un hall con biblioteca y placard; hacia el comedor, un vajillero que complementa la doble altura y sus grandes ventanales.";
+        }
+        if (tab === 'ejecutivo') {
+            document.getElementById('project-title').textContent = "Colihue 18";
+            document.getElementById('project-paragraph-1').textContent =
+                "La técnica también es parte del diseño. Detrás de cada espacio bien resuelto hay un proyecto ejecutivo preciso, donde cada sistema —eléctrico, sanitario o estructural— se piensa con el mismo cuidado que lo estético. ";
+            document.getElementById('project-paragraph-2').textContent =
+                "La iluminación, en particular, tiene un rol clave: crea atmósferas, resalta materiales y acompaña la experiencia del espacio. En la casa Colihue, la luz destaca la madera en muros y techos, e incluso enmarca una obra de arte sin descuidar lo funcional. Cada capa del proyecto se cuida para que la arquitectura funcione, perdure y se viva con confianza.";
+        }
+        if (tab === 'obra') {
+            document.getElementById('project-title').textContent = "Pulqui 15";
+            document.getElementById('project-paragraph-1').textContent =
+                "La dirección de obra es estar en cada paso. Es tomar decisiones en tiempo real, resolver imprevistos y asegurar que lo proyectado se construya tal como fue pensado. En Casa Pulqui, el armado de la escalera curva fue un claro ejemplo de ese rol: una pieza compleja que necesitó precisión técnica, oficio y presencia constante en obra. ";
+            document.getElementById('project-paragraph-2').textContent =
+                "En MUZO entendemos que la dirección no es solo supervisión, sino acompañamiento activo en todas las etapas, cuidando los detalles, articulando equipos y haciendo que cada parte encaje para lograr el todo. Porque para que una obra emocione, alguien tiene que estar ahí, todos los días, haciéndola realidad.";
+        }
+        if (tab === 'renders') {
+            document.getElementById('project-title').textContent = "Casa chequen 43";
+            document.getElementById('project-paragraph-1').textContent =
+                "Los renders son una ventana al futuro. Son una herramienta esencial para anticipar cómo se va a ver, sentir y vivir una casa antes de que exista. En Casa Chequén, fueron clave para visualizar el uso del ladrillo común como protagonista, aplicado de distintas formas para dar textura, ritmo e identidad al proyecto. Nos permitieron explorar combinaciones de materiales, luz y escala junto al cliente, y tomar decisiones con claridad y confianza.";
+            document.getElementById('project-paragraph-2').textContent =
+                "En MUZO creemos que diseñar también es imaginar juntos, y los renders hacen visible eso que todavía está por construirse.";
+        }
+    }
 </script>
 
