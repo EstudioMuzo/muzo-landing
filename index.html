@@ -9,12 +9,26 @@
         html {
             scroll-behavior: smooth;
         }
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/Manrope.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Host Grotesk';
+            src: url('/HostGrotesk.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: italic;
+            font-display: swap;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-900">
 
 <!-- Header -->
-<header class="bg-black text-white">
+<header class="bg-black text-white" style="font-family: 'Manrope', sans-serif;">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
 
         <div class="flex items-center gap-2">
@@ -42,7 +56,7 @@
 </header>
 
 <!-- Hero -->
-<section class="relative w-full h-[90vh] overflow-hidden" id="hero-carousel">
+<section style="font-family: 'Host Grotesk', sans-serif;" class="relative w-full h-[90vh] overflow-hidden" id="hero-carousel">
     <div class="flex transition-transform duration-700 ease-in-out h-full" id="carousel-track">
         <!-- Slide 1 -->
         <div class="w-full flex-shrink-0 bg-cover bg-center relative" style="background-image: url('main.jpg');">
@@ -96,7 +110,7 @@
 
 
 <!-- Why MUZO -->
-<section class="bg-white py-16 px-6 md:px-20 text-center">
+<section style="font-family: 'Host Grotesk', sans-serif;" class="bg-white py-16 px-6 md:px-20 text-center">
     <h2 class="text-2xl md:text-3xl font-semibold mb-4">¿Por qué elegir MUZO?</h2>
     <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
         Nuestro objetivo es <span class="font-semibold">interpretar los deseos y necesidades de todos nuestros clientes</span>,
@@ -124,10 +138,10 @@
 </section>
 
 <!-- Projects Section -->
-<section class="bg-black text-white py-16 px-6 md:px-20">
+<section style="font-family: 'Manrope', sans-serif;" class="bg-black text-white py-16 px-6 md:px-20">
     <div class="flex justify-between items-center mb-10">
         <h2 class="text-2xl md:text-3xl font-semibold">Conocé nuestros proyectos</h2>
-        <a href="#" style="color: #A9B934" class="text-2xl hover:underline inline-flex items-center">
+        <a  href="#" style="color: #A9B934; font-family: 'Host Grotesk', sans-serif;" class="text-2xl hover:underline inline-flex items-center">
             Ver todos
             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -173,11 +187,11 @@
 </section>
 
 <!-- Architecture Detail Section -->
-<section id="arquitectura" class="bg-white text-black py-20 px-6 md:px-20">
+<section style="font-family: 'Manrope', sans-serif;" id="arquitectura" class="bg-white text-black py-20 px-6 md:px-20">
 
     <!-- Section title & tabs -->
     <div class="mb-10">
-        <h2 class="text-3xl font-semibold mb-6">Arquitectura</h2>
+        <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-3xl font-semibold mb-6">Arquitectura</h2>
         <div class="flex flex-wrap gap-4 text-gray-800 text-sm border-b pb-4">
             <button onclick="showTab('planta')" id="tab-planta" class="text-green-700 font-medium border-b-2 border-green-700 pb-1">Diseño de planta</button>
             <button onclick="showTab('fachada')" id="tab-fachada" class="hover:text-green-700">Fachada</button>
@@ -209,11 +223,11 @@
     </div>
 
     <!-- Construction Section -->
-    <section id="construccion" class="bg-black text-white py-20 px-6 md:px-20">
+    <section style="font-family: 'Manrope', sans-serif;" id="construccion" class="bg-black text-white py-20 px-6 md:px-20">
 
         <!-- Title and subtitle -->
         <div class="max-w-5xl mx-auto mb-10">
-            <h2 class="text-2xl md:text-3xl font-semibold">Construcción</h2>
+            <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl md:text-3xl font-semibold">Construcción</h2>
             <p class="text-gray-300 mt-2">Soluciones integrales para construir con confianza</p>
         </div>
 
@@ -264,8 +278,8 @@
 </section>
 
 <!-- Team Section -->
-<section id="nosotros" class="bg-white text-black py-20 px-6 md:px-20">
-    <h2 class="text-2xl md:text-3xl font-semibold text-center mb-16">Quiénes somos</h2>
+<section style="font-family: 'Manrope', sans-serif;" id="nosotros" class="bg-white text-black py-20 px-6 md:px-20">
+    <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl md:text-3xl font-semibold text-center mb-16">Quiénes somos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14 max-w-6xl mx-auto">
         <!-- 1 -->
         <div>
@@ -327,11 +341,11 @@
 </section>
 
 <!-- Quote and Values Section -->
-<section class="bg-white text-black py-20 px-6 md:px-20">
+<section style="font-family: 'Manrope', sans-serif;" class="bg-white text-black py-20 px-6 md:px-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
         <!-- Left: Quote -->
-        <div class="text-2xl font-medium leading-relaxed border-r border-black pr-6 md:pr-12">
+        <div style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl font-medium leading-relaxed border-r border-black pr-6 md:pr-12">
             <p>
                 "Al final del día, lo más importante es que la gente confíe en que lo vamos a resolver. Que sepan que estamos ahí, acompañando cada paso, desde la primera idea hasta la última pincelada."
             </p>
@@ -390,9 +404,9 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contactanos" class="bg-[#DADADA] py-20 px-6 md:px-20 relative overflow-hidden">
+<section style="font-family: 'Manrope', sans-serif;" id="contactanos" class="bg-[#DADADA] py-20 px-6 md:px-20 relative overflow-hidden">
     <div class="max-w-xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Contactanos!</h2>
+        <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Contactanos!</h2>
         <p class="text-gray-600 mb-8">
             Dejanos tu mensaje o escribinos a
             <a href="mailto:Estudiomuzo@gmail.com" class="text-green-800 underline">Estudiomuzo@gmail.com</a>
@@ -424,12 +438,12 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-black text-white px-6 md:px-20 py-16">
+<footer style="font-family: 'Manrope', sans-serif;" class="bg-black text-white px-6 md:px-20 py-16">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
 
         <!-- Left block -->
         <div>
-            <h2 class="text-3xl font-bold mb-4">MUZO</h2>
+            <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-3xl font-bold mb-4">MUZO</h2>
             <p class="text-sm text-gray-400">Copyright © 2025</p>
             <a href="mailto:Estudiomuzo@gmail.com" class="text-sm text-white underline mt-1 inline-block">Estudiomuzo@gmail.com</a>
 
