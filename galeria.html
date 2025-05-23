@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería | MUZO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* Subtle background circles pattern */
+            background-color: #f5f5f5;
+            background-image:
+                    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+                    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+            background-size: 120px 120px;
+            background-position: 0 0, 60px 60px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- Header -->
+<header class="bg-black text-white">
+    <div class="max-w-7xl mx-auto flex items-center px-6 py-5">
+        <!-- Logo -->
+        <a href="/" class="flex items-center w-[160px] h-[65px] mr-12">
+            <!-- You can replace this SVG with your logo -->
+            <svg width="65" height="65" viewBox="0 0 65 65" fill="none" class="mr-4"><rect x="2" y="2" width="61" height="61" rx="8" fill="#fff"/><rect x="2" y="2" width="61" height="61" rx="8" stroke="#000" stroke-width="4"/><text x="17" y="28" font-size="18" font-family="Arial Black, Arial, sans-serif" fill="#000">MU</text><text x="18" y="49" font-size="18" font-family="Arial Black, Arial, sans-serif" fill="#000">ZO</text></svg>
+        </a>
+        <!-- Navigation -->
+        <nav class="flex-1 flex justify-center items-center gap-9 text-base">
+            <a href="/galeria" class="border-b border-white pb-1 font-medium">Galería</a>
+            <a href="/#construccion" class="hover:text-gray-300">Construcción</a>
+            <a href="/#arquitectura" class="hover:text-gray-300">Arquitectura y diseño</a>
+            <a href="#" class="hover:text-gray-300">Venta</a>
+            <a href="/#nosotros" class="hover:text-gray-300">Sobre nosotros</a>
+        </nav>
+        <!-- Contactanos -->
+        <div class="ml-auto">
+            <a href="/#contactanos" class="bg-white text-black px-6 py-2 rounded-full font-medium shadow hover:bg-gray-200 transition">Contactanos</a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Section -->
+<main class="max-w-7xl mx-auto px-4 pt-14 pb-24">
+
+    <!-- Title and subtitle -->
+    <h1 class="text-4xl md:text-5xl font-bold text-center mt-2 mb-3">Nuestros proyectos</h1>
+    <p class="text-gray-700 text-center max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
+        En Muzo, desarrollamos proyectos arquitectónicos que combinan estética, eficiencia y calidad. <br>
+        Nos especializamos en crear espacios bien diseñados, adaptados a las necesidades de cada cliente.
+    </p>
+
+    <!-- Project Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14 justify-items-center">
+
+        <!-- Project Card 1 -->
+        <div class="relative w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-6">
+                <div>
+                    <h2 class="text-white text-2xl font-bold mb-2">Nahuel 14</h2>
+                    <div class="flex items-center text-green-300 text-sm mb-1">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.828 0l-4.243-4.243a8 8 0 1 1 11.314 0z"/>
+                            <circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        Mapuche Country Club, Pilar.
+                    </div>
+                    <div class="flex items-center text-green-300 text-sm mb-1">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect width="18" height="12" x="3" y="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        360 m²
+                    </div>
+                    <div class="text-gray-200 text-sm mt-1">
+                        Servicios: Proyecto, dirección, construcción, interiorismo.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Card 2 (no overlay, repeat image for example) -->
+        <div class="w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Project Card 3 (no overlay, repeat image for example) -->
+        <div class="w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Project Card 4 (repeat row) -->
+        <div class="w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full max-w-[420px] aspect-square rounded-md overflow-hidden shadow">
+            <img src="project1.jpg" alt="Nahuel 14" class="w-full h-full object-cover">
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
