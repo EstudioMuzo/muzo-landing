@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MUZO Landing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"/>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -29,6 +32,15 @@
             font-weight: 100 900;
             font-style: normal;
             font-display: swap;
+        }
+
+        /* Custom Swiper styles */
+        .swiper {
+            padding-bottom: 60px;
+        }
+
+        .swiper-pagination-bullet {
+            display: none !important;
         }
     </style>
 </head>
@@ -234,60 +246,80 @@
     <section id="construccion" class="bg-black text-white py-20 px-6 md:px-20 font-manrope">
         <!-- Title and subtitle -->
         <div class="max-w-screen-2xl mx-auto mb-10">
-            <h2 class="text-3xl md:text-4xl font-hostgrotesk font-semibold">Construcciones</h2>
+            <h2 style="font-family: 'Host Grotesk', 'sans-serif';" class="text-3xl md:text-4xl font-semibold">Construcciones</h2>
             <p class="text-gray-300 mt-2 md:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat sollicitudin ex eget vulputate. Nam placerat sollicitudin ex eget vulputate.
+                Soluciones integrales para construir con confianza
             </p>
         </div>
 
         <!-- Highlight bar -->
         <div class="h-1 w-full bg-[#e9ebcf] mb-10 max-w-screen-2xl mx-auto"></div>
 
-        <!-- 5-column grid with vertical dividers -->
-        <div class="max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-x divide-[#e9ebcf] bg-black">
-            <!-- Item 1 -->
-            <div class="py-8 px-4 flex flex-col">
-                <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">1</span>
-                <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Cómputo y presupuesto</span>
-                <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
-                Realizamos un análisis detallado de los recursos necesarios para cada proyecto, elaborando presupuestos precisos que permiten una planificación clara y transparente desde el inicio.
-            </span>
+        <!-- Swiper Container -->
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="swiper constructionSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="py-8 px-6 flex flex-col min-h-[280px] border-r border-[#e9ebcf]">
+                            <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">1</span>
+                            <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Cómputo y presupuesto</span>
+                            <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
+                            Realizamos un análisis detallado de los recursos necesarios para cada proyecto, elaborando presupuestos precisos que permiten una planificación clara y transparente desde el inicio.
+                        </span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="py-8 px-6 flex flex-col min-h-[280px] border-r border-[#e9ebcf]">
+                            <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">2</span>
+                            <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Dirección</span>
+                            <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
+                            Supervisamos cada etapa de la obra asegurando el cumplimiento de los planos, los tiempos de ejecución y los estándares de calidad establecidos.
+                        </span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="py-8 px-6 flex flex-col min-h-[280px] border-r border-[#e9ebcf]">
+                            <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">3</span>
+                            <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Administración</span>
+                            <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
+                            Gestionamos eficientemente los recursos humanos, materiales y financieros involucrados en la obra, optimizando los procesos y reduciendo costos innecesarios.
+                        </span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="py-8 px-6 flex flex-col min-h-[280px] border-r border-[#e9ebcf]">
+                            <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">4</span>
+                            <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Asesoramiento y compra de materiales</span>
+                            <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
+                            Ofrecemos asesoramiento personalizado para la selección de materiales, buscando siempre la mejor relación entre calidad, costo y sostenibilidad, con acceso a proveedores confiables.
+                        </span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="py-8 px-6 flex flex-col min-h-[280px]">
+                            <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">5</span>
+                            <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Garantía post venta</span>
+                            <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
+                            Nos comprometemos con la calidad y la satisfacción a largo plazo, ofreciendo garantía y soporte una vez finalizada la obra para resolver cualquier inconveniente que pudiera surgir.
+                        </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination dots -->
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- Item 2 -->
-            <div class="py-8 px-4 flex flex-col">
-                <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">2</span>
-                <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Dirección</span>
-                <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
-                Supervisamos cada etapa de la obra asegurando el cumplimiento de los planos, los tiempos de ejecución y los estándares de calidad establecidos.
-            </span>
-            </div>
-            <!-- Item 3 -->
-            <div class="py-8 px-4 flex flex-col">
-                <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">3</span>
-                <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Administración</span>
-                <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">
-                Gestionamos eficientemente los recursos humanos, materiales y financieros involucrados en la obra, optimizando los procesos y reduciendo costos innecesarios.
-            </span>
-            </div>
-            <!-- Item 4 -->
-<!--            <div class="py-8 px-4 flex flex-col">-->
-<!--                <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">4</span>-->
-<!--                <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Asesoramiento y compra de materiales</span>-->
-<!--                <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">-->
-<!--                Ofrecemos asesoramiento personalizado para la selección de materiales, buscando siempre la mejor relación entre calidad, costo y sostenibilidad, con acceso a proveedores confiables.-->
-<!--            </span>-->
-<!--            </div>-->
-            <!-- Item 5 -->
-<!--            <div class="py-8 px-4 flex flex-col">-->
-<!--                <span class="font-hostgrotesk text-6xl md:text-7xl font-bold mb-4">5</span>-->
-<!--                <span class="font-hostgrotesk text-xl md:text-2xl font-semibold mb-2">Garantía post venta</span>-->
-<!--                <span class="text-gray-300 text-sm leading-relaxed font-manrope mt-2">-->
-<!--                Nos comprometemos con la calidad y la satisfacción a largo plazo, ofreciendo garantía y soporte una vez finalizada la obra para resolver cualquier inconveniente que pudiera surgir.-->
-<!--            </span>-->
-<!--            </div>-->
         </div>
     </section>
-
 </section>
 
 <!-- Team Section -->
@@ -468,6 +500,8 @@
 </body>
 </html>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
 <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('#carousel-track > div');
@@ -546,5 +580,77 @@
                 "En MUZO creemos que diseñar también es imaginar juntos, y los renders hacen visible eso que todavía está por construirse.";
         }
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.constructionSwiper', {
+            // Basic settings
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            centeredSlides: false,
+
+            // Responsive breakpoints
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 0
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 0
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0
+                },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 0
+                }
+            },
+
+            // Auto-play
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+                reverseDirection: false
+            },
+
+            // Loop
+            loop: true,
+
+            // Navigation
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Effects and transitions
+            speed: 800,
+            effect: 'slide',
+
+            // Free mode for smooth scrolling
+            freeMode: {
+                enabled: true,
+                sticky: false,
+            },
+
+            // Mouse wheel support
+            mousewheel: {
+                releaseOnEdges: true,
+            },
+
+            // Keyboard control
+            keyboard: {
+                enabled: true,
+            }
+        });
+    });
 </script>
 
