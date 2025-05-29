@@ -23,15 +23,22 @@
             font-style: italic;
             font-display: swap;
         }
+        @font-face {
+            font-family: 'Glancyr';
+            src: url('/Glancyr.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-900">
 
 <!-- Header -->
-<header class="bg-black text-white" style="font-family: 'Manrope', sans-serif;">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+<header class="bg-black text-white relative" style="font-family: 'Manrope', sans-serif;">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-end items-center">
 
-        <div class="flex items-center gap-2">
+        <div class="absolute left-6">
             <a href="index.html" class="block w-[120px] h-[62px]">
                 <svg width="120" height="62" viewBox="0 0 120 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0.878128V61.1219H120V0.878128H0ZM30.1197 51.7209C18.6747 51.7209 9.39812 42.4442 9.39812 30.9993C9.39812 19.5543 18.6747 10.2777 30.1197 10.2777C41.5647 10.2777 50.8442 19.5543 50.8442 30.9993C50.8442 42.4442 41.5647 51.7209 30.1197 51.7209ZM118.297 59.4193H59.9993V2.5807H118.297V59.4207V59.4193Z" fill="white"/>
@@ -50,7 +57,7 @@
             <a href="#arquitectura" class="hover:text-gray-400">Arquitectura y diseño</a>
             <a href="#" class="hover:text-gray-400">Venta</a>
             <a href="#nosotros" class="hover:text-gray-400">Sobre nosotros</a>
-            <a href="#contactanos" class="bg-white text-black rounded-full px-4 py-1 hover:bg-gray-200 transition">Contactanos</a>
+            <a href="#contactanos" class="bg-white text-black rounded-full px-4 py-3 hover:bg-gray-200 transition">Contactanos</a>
         </nav>
     </div>
 </header>
@@ -65,7 +72,7 @@
                 <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">
                     Arquitectura<br />Construcción
                 </h1>
-                <a href="#contactanos" class="mt-6 inline-flex items-center bg-green-800 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full w-max">
+                <a href="#contactanos" class="mt-6 inline-flex items-center bg-[#203124] hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full w-max">
                     Consultanos por tu proyecto
                     <svg class="ml-2 w-4 h-4" width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.9473 11.4277C18.3164 11.8379 18.3164 12.4531 17.9473 12.8223L10.0723 20.6973C9.66211 21.1074 9.04688 21.1074 8.67773 20.6973C8.26758 20.3281 8.26758 19.7129 8.67773 19.3438L15.8555 12.166L8.67773 4.94727C8.26758 4.57812 8.26758 3.96289 8.67773 3.59375C9.04688 3.18359 9.66211 3.18359 10.0312 3.59375L17.9473 11.4277Z"/>
@@ -79,7 +86,7 @@
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-20">
                 <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">
-                    Diseño<br />Vanguardia
+                    Arquitectura<br />Construcción
                 </h1>
                 <a href="#contactanos" class="mt-6 inline-flex items-center bg-[#203124] hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full w-max">
                     Consultanos por tu proyecto
@@ -95,9 +102,9 @@
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-20">
                 <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">
-                    Diseño<br />Vanguardia
+                    Arquitectura<br />Construcción
                 </h1>
-                <a href="#contactanos" class="mt-6 inline-flex items-center bg-green-800 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full w-max">
+                <a href="#contactanos" class="mt-6 inline-flex items-center bg-[#203124] hover:bg-green-700 text-white font-medium px-6 py-3 rounded-full w-max">
                     Consultanos por tu proyecto
                     <svg class="ml-2 w-4 h-4" width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.9473 11.4277C18.3164 11.8379 18.3164 12.4531 17.9473 12.8223L10.0723 20.6973C9.66211 21.1074 9.04688 21.1074 8.67773 20.6973C8.26758 20.3281 8.26758 19.7129 8.67773 19.3438L15.8555 12.166L8.67773 4.94727C8.26758 4.57812 8.26758 3.96289 8.67773 3.59375C9.04688 3.18359 9.66211 3.18359 10.0312 3.59375L17.9473 11.4277Z"/>
@@ -111,27 +118,28 @@
 
 <!-- Why MUZO -->
 <section style="font-family: 'Host Grotesk', sans-serif;" class="bg-white py-16 px-6 md:px-20 text-center">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-4">¿Por qué elegir MUZO?</h2>
-    <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-        Nuestro objetivo es <span class="font-semibold">interpretar los deseos y necesidades de todos nuestros clientes</span>,
-        materializando sus ideas en la construcción de viviendas unifamiliares, locales comerciales, edificios de propiedad
-        horizontal, construcciones industriales y construcciones civiles en general.
+    <h2 style="font-family: 'Inter', sans-serif;" class="text-2xl md:text-3xl mb-4"><b>¿Por qué elegir MUZO?</b></h2>
+    <p style="font-family: 'Inter', sans-serif;" class="max-w-4xl mx-auto leading-relaxed">
+        En MUZO diseñamos espacios que inspiran y emocionan.
+        Nuestra arquitectura combina calidez, detalle e innovación para transformar ideas en lugares con alma.
+        Creamos viviendas, locales y espacios industriales con una mirada sensible y comprometida, cuidando cada etapa del proceso.
+        <b>Porque sabemos que los espacios bien pensados pueden transformar lo cotidiano en momentos memorables.</b>
     </p>
 
     <!-- Stats -->
     <div class="max-w-5xl mx-auto mt-16 py-10 border-t-2 border-gray-600">
         <div class="grid grid-cols-1 sm:grid-cols-3 text-center divide-y sm:divide-y-0 sm:divide-x-2 divide-gray-600">
             <div class="py-6">
-                <p class="text-3xl md:text-5xl font-extrabold">10+</p>
-                <p class="mt-3 text-lg text-gray-700 font-medium">Años de experiencia</p>
+                <p style="font-family: 'Glancyr,', sans-serif;" class="text-3xl md:text-5xl font-extrabold">10+</p>
+                <p style="font-family: 'Manrope', sans-serif;" class="mt-3 text-lg text-gray-700 font-medium">Años de experiencia</p>
             </div>
             <div class="py-6">
-                <p class="text-3xl md:text-5xl font-extrabold">55+</p>
-                <p class="mt-3 text-lg text-gray-700 font-medium">Proyectos construidas</p>
+                <p style="font-family: 'Glancyr,', sans-serif;" class="text-3xl md:text-5xl font-extrabold">55+</p>
+                <p style="font-family: 'Manrope', sans-serif;" class="mt-3 text-lg text-gray-700 font-medium">Proyectos construidas</p>
             </div>
             <div class="py-6">
-                <p class="text-3xl md:text-5xl font-extrabold">10+</p>
-                <p class="mt-3 text-lg text-gray-700 font-medium">Barrios privados</p>
+                <p style="font-family: 'Glancyr,', sans-serif;" class="text-3xl md:text-5xl font-extrabold">10+</p>
+                <p style="font-family: 'Manrope', sans-serif;" class="mt-3 text-lg text-gray-700 font-medium">Barrios privados</p>
             </div>
         </div>
     </div>
@@ -151,8 +159,8 @@
 
     <!-- Project Card 1 -->
     <div class="relative overflow-hidden rounded-lg mb-10">
-        <img src="project1.jpg" alt="Pilmaiquen 12" class="w-full h-[600px] object-cover" />
-        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4">
+        <img src="project1.jpg" alt="Pilmaiquen 12" class="w-3/4 mx-auto h-[600px] object-cover" />
+        <div class="w-3/4 mx-auto absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4">
             <h3 class="text-lg font-semibold">Pilmaiquen 12</h3>
             <p class="text-sm text-gray-300 flex items-center gap-4 mt-1">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,8 +177,8 @@
 
     <!-- Project Card 2 -->
     <div class="relative overflow-hidden rounded-lg">
-        <img src="project2.jpg" alt="Casa Puelche 82" class="w-full h-[600px] object-cover" />
-        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4">
+        <img src="project2.jpg" alt="Casa Puelche 82" class="w-3/4 mx-auto h-[600px] object-cover" />
+        <div class="w-3/4 mx-auto absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4">
             <h3 class="text-lg font-semibold">Puelche 41</h3>
             <p class="text-sm text-gray-300 flex items-center gap-4 mt-1">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -284,62 +292,48 @@
 
 <!-- Team Section -->
 <section style="font-family: 'Manrope', sans-serif;" id="nosotros" class="bg-white text-black py-20 px-6 md:px-20">
-    <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl md:text-3xl font-semibold text-center mb-16">Quiénes somos</h2>
+    <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-4xl md:text-4xl font-bold text-center mb-16">Quiénes somos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14 max-w-6xl mx-auto">
         <!-- 1 -->
         <div>
             <img
-                    src="manuel.jpg"
+                    src="manuel.png"
                     alt="Manuel Garcia"
                     class="w-full aspect-square object-cover rounded-md"
             />
-            <div class="mt-4 flex flex-col gap-1 w-1/3">
-                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center">
+            <div class="mt-4 flex flex-col gap-1 w-2/5">
+                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center whitespace-nowrap">
                     Arquitecto Fundador
                 </span>
-                <span class="block font-normal text-lg mt-1">Manuel Garcia</span>
+                <span class="block font-normal text-lg mt-1 whitespace-nowrap">Manuel Garcia</span>
             </div>
         </div>
         <!-- 2 -->
         <div>
             <img
-                    src="carola.jpg"
+                    src="carola.png"
                     alt="Carola Efron"
                     class="w-full aspect-square object-cover rounded-md"
             />
-            <div class="mt-4 flex flex-col gap-1 w-1/3">
-                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center">
+            <div class="mt-4 flex flex-col gap-1 w-2/5">
+                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center whitespace-nowrap">
                     Arquitecta Socia
                 </span>
-                <span class="block font-normal text-lg mt-1">Carola Efron</span>
+                <span class="block font-normal text-lg mt-1 whitespace-nowrap">Carola Efron</span>
             </div>
         </div>
         <!-- 3 -->
         <div>
             <img
-                    src="joaquina.jpg"
+                    src="joaquina.png"
                     alt="Joaquina Turco"
                     class="w-full aspect-square object-cover rounded-md"
             />
-            <div class="mt-4 flex flex-col gap-1 w-1/3">
-                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center">
+            <div class="mt-4 flex flex-col gap-1 w-2/5">
+                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center whitespace-nowrap">
                     Contadora
                 </span>
-                <span class="block font-normal text-lg mt-1">Joaquina Turco</span>
-            </div>
-        </div>
-        <!-- 4: Placeholder -->
-        <div>
-            <img
-                    src="joaquina.jpg"
-                    alt="Joaquina Turco"
-                    class="w-full aspect-square object-cover rounded-md"
-            />
-            <div class="mt-4 flex flex-col gap-1 w-1/3">
-                <span class="bg-[#203124] flex text-white text-sm font-semibold px-4 py-1 rounded-full items-center justify-center">
-                    Arquitecta
-                </span>
-                <span class="block font-normal text-lg mt-1">Camila Jaime</span>
+                <span class="block font-normal text-lg mt-1 whitespace-nowrap">Joaquina Turco</span>
             </div>
         </div>
     </div>
@@ -350,7 +344,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
         <!-- Left: Quote -->
-        <div style="font-family: 'Host Grotesk', sans-serif;" class="text-2xl font-medium leading-relaxed border-r border-black pr-6 md:pr-12">
+        <div style="font-family: 'Host Grotesk', sans-serif;" class="text-[24px] leading-relaxed border-r border-black pr-6 md:pr-12">
             <p>
                 "Al final del día, lo más importante es que la gente confíe en que lo vamos a resolver. Que sepan que estamos ahí, acompañando cada paso, desde la primera idea hasta la última pincelada."
             </p>
@@ -437,22 +431,24 @@
 
         <!-- Left block -->
         <div>
-            <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-3xl font-bold mb-4">MUZO</h2>
+            <svg class="mb-8" width="120" height="61" viewBox="0 0 120 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0V60.2437H120V0H0ZM30.1197 50.8427C18.6747 50.8427 9.39812 41.5661 9.39812 30.1211C9.39812 18.6762 18.6747 9.39957 30.1197 9.39957C41.5647 9.39957 50.8442 18.6762 50.8442 30.1211C50.8442 41.5661 41.5647 50.8427 30.1197 50.8427ZM118.297 58.5412H59.9993V1.70257H118.297V58.5426V58.5412Z" fill="white"/>
+                <path d="M106.455 35.7957L106.417 35.7248C105.594 34.1959 104.441 32.9952 102.964 32.1345C101.479 31.2681 99.7602 30.8442 97.8233 30.8442C95.8864 30.8442 94.1838 31.2724 92.6823 32.1345H92.6794C91.9402 32.5642 91.2806 33.082 90.702 33.6794C90.1205 34.2769 89.62 34.9625 89.2005 35.7277C88.3745 37.2451 87.9695 38.9969 87.9695 40.9656C87.9695 42.9344 88.376 44.6919 89.1976 46.2252L89.2005 46.2281L89.2034 46.231C90.0424 47.7441 91.2025 48.9346 92.6808 49.7953H92.6837C94.1852 50.6588 95.9037 51.0856 97.8247 51.0856C99.7457 51.0856 101.48 50.6603 102.966 49.7953L103.034 49.7548C103.755 49.3266 104.401 48.8189 104.966 48.2287C105.532 47.6414 106.014 46.9731 106.42 46.2296C107.265 44.6948 107.678 42.9358 107.678 40.9671C107.678 38.9983 107.278 37.2972 106.458 35.7957H106.455ZM92.934 44.3303C92.9152 44.2898 92.8964 44.2522 92.8805 44.2116C92.8993 44.2522 92.9181 44.2898 92.9369 44.3303L92.9687 44.3954C92.9586 44.3737 92.9441 44.352 92.934 44.3303ZM102.37 44.0482L102.329 44.1292C101.901 45.0029 101.309 45.6654 100.549 46.1341C99.8122 46.5811 98.9197 46.814 97.8507 46.814C96.7818 46.814 95.8748 46.5811 95.1211 46.1326C94.3877 45.6784 93.8091 45.042 93.3839 44.2116L93.3433 44.1306C92.9181 43.2627 92.6967 42.2125 92.6967 40.9671C92.6967 39.7216 92.9181 38.67 93.3433 37.8006L93.3839 37.7196C93.8091 36.8893 94.3877 36.2644 95.1182 35.8275L95.1211 35.8247L95.124 35.8218C95.8791 35.356 96.7832 35.1158 97.8522 35.1158C98.9212 35.1158 99.8108 35.356 100.547 35.8218L100.55 35.8247L100.556 35.8275C101.311 36.2774 101.904 36.9284 102.331 37.8006L102.371 37.8816C102.769 38.7336 102.977 39.7563 102.977 40.9656C102.977 42.1749 102.769 43.1947 102.371 44.0482H102.37Z" fill="white"/>
+                <path d="M77.3243 46.7606L87.1868 34.6387V31.167H70.8004V35.171H80.5356L70.7354 47.2929V50.7646H87.22V46.7606H77.3243Z" fill="white"/>
+                <path d="M107.651 9.3994V21.2624C107.651 22.991 107.331 24.4665 106.671 25.6599L106.669 25.6628C106.016 26.8229 105.129 27.7053 104.011 28.2954H104.008V28.2983C102.905 28.861 101.692 29.1402 100.378 29.1402C99.0626 29.1402 97.8664 28.861 96.7916 28.2954L96.7858 28.2926C95.7356 27.7183 94.8937 26.8721 94.2645 25.7655L94.2052 25.657V25.6541C93.5615 24.4636 93.2505 22.991 93.2505 21.2624V9.3994H97.2501V21.287C97.2501 22.6699 97.5583 23.6217 98.0964 24.2249C98.6533 24.8339 99.4228 25.1536 100.45 25.1536C101.477 25.1536 102.238 24.831 102.78 24.2278L102.783 24.2249V24.222C103.337 23.6217 103.651 22.6684 103.651 21.2856V9.39795H107.651V9.3994Z" fill="white"/>
+                <path d="M91.6296 9.39941V28.9175H87.3464V18.2377L82.8737 28.9175H79.5597L75.0596 18.216V28.9175H70.7764V9.39941H75.6121L81.2579 22.8999L86.8199 9.39941H91.6296Z" fill="white"/>
+            </svg>
             <p class="text-sm text-gray-400">Copyright © 2025</p>
             <a href="mailto:Estudiomuzo@gmail.com" class="text-sm text-white underline mt-1 inline-block">Estudiomuzo@gmail.com</a>
 
             <!-- Social icons -->
             <div class="flex gap-4 mt-4">
-                <a href="#" class="bg-gray-800 hover:bg-gray-700 p-2 rounded-full">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.04c-5.5 0-10 4.48-10 10 0 4.41 3.58 8.07 8 8.91v-6.3H8v-2.6h2v-2c0-2 1.22-3.1 3.06-3.1.89 0 1.82.16 1.82.16v2h-1.03c-1.01 0-1.32.63-1.32 1.27v1.67h2.25l-.36 2.6h-1.9v6.3c4.42-.84 8-4.5 8-8.91 0-5.52-4.5-10-10-10z"/>
-                    </svg>
-                </a>
-                <a href="#" class="bg-gray-800 hover:bg-gray-700 p-2 rounded-full">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8v-6.92h-2.4v-2.88H10V9.75c0-2.38 1.44-3.69 3.57-3.69 1.04 0 2.13.19 2.13.19v2.35H14.7c-1.24 0-1.63.77-1.63 1.56v1.87h2.8l-.45 2.88h-2.35v6.92c4.56-.93 8-4.96 8-9.8z"/>
-                    </svg>
-                </a>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.00069 0.710449C6.68315 0.710449 6.3923 0.720583 5.48207 0.762005C4.57362 0.803606 3.95352 0.947429 3.41094 1.15845C2.84969 1.37641 2.37359 1.66797 1.89928 2.14246C1.42461 2.61678 1.13305 3.09287 0.91438 3.65395C0.702822 4.19671 0.55882 4.81698 0.517931 5.72508C0.47722 6.63531 0.466553 6.92634 0.466553 9.24387C0.466553 11.5614 0.476864 11.8514 0.518109 12.7616C0.559887 13.67 0.703711 14.2901 0.914557 14.8327C1.13269 15.394 1.42425 15.8701 1.89875 16.3444C2.37288 16.8191 2.84898 17.1113 3.40987 17.3293C3.95281 17.5403 4.57308 17.6841 5.48136 17.7257C6.39159 17.7672 6.68226 17.7773 8.99962 17.7773C11.3173 17.7773 11.6073 17.7672 12.5175 17.7257C13.426 17.6841 14.0468 17.5403 14.5897 17.3293C15.1508 17.1113 15.6262 16.8191 16.1003 16.3444C16.575 15.8701 16.8665 15.394 17.0852 14.8329C17.295 14.2901 17.439 13.6699 17.4817 12.7618C17.5226 11.8515 17.5332 11.5614 17.5332 9.24387C17.5332 6.92634 17.5226 6.63549 17.4817 5.72526C17.439 4.8168 17.295 4.19671 17.0852 3.65412C16.8665 3.09287 16.575 2.61678 16.1003 2.14246C15.6256 1.66779 15.151 1.37623 14.5892 1.15845C14.0452 0.947429 13.4247 0.803606 12.5163 0.762005C11.606 0.720583 11.3163 0.710449 8.99802 0.710449H9.00069ZM8.23513 2.24822C8.46233 2.24786 8.71585 2.24822 9.00065 2.24822C11.2791 2.24822 11.5491 2.2564 12.4489 2.29729C13.2809 2.33533 13.7324 2.47435 14.0332 2.59116C14.4315 2.74582 14.7154 2.93072 15.0139 3.22938C15.3125 3.52805 15.4974 3.8125 15.6525 4.21073C15.7693 4.51118 15.9085 4.96274 15.9463 5.79474C15.9872 6.69431 15.9961 6.96454 15.9961 9.24189C15.9961 11.5192 15.9872 11.7895 15.9463 12.689C15.9083 13.521 15.7693 13.9726 15.6525 14.2731C15.4978 14.6713 15.3125 14.9548 15.0139 15.2533C14.7152 15.552 14.4316 15.7369 14.0332 15.8916C13.7328 16.0089 13.2809 16.1476 12.4489 16.1856C11.5493 16.2265 11.2791 16.2354 9.00065 16.2354C6.72205 16.2354 6.452 16.2265 5.55244 16.1856C4.72043 16.1472 4.26887 16.0082 3.96789 15.8914C3.56966 15.7367 3.28521 15.5518 2.98654 15.2532C2.68787 14.9545 2.50298 14.6707 2.34796 14.2723C2.23116 13.9719 2.09196 13.5203 2.05409 12.6883C2.0132 11.7888 2.00502 11.5185 2.00502 9.23976C2.00502 6.96098 2.0132 6.69218 2.05409 5.79261C2.09213 4.9606 2.23116 4.50904 2.34796 4.20824C2.50263 3.81001 2.68787 3.52557 2.98654 3.2269C3.28521 2.92823 3.56966 2.74334 3.96789 2.58831C4.26869 2.47098 4.72043 2.33231 5.55244 2.29409C6.33964 2.25853 6.64471 2.24786 8.23513 2.24609V2.24822ZM13.5557 3.66513C12.9904 3.66513 12.5317 4.12326 12.5317 4.68878C12.5317 5.25412 12.9904 5.71279 13.5557 5.71279C14.1211 5.71279 14.5797 5.25412 14.5797 4.68878C14.5797 4.12344 14.1211 3.66513 13.5557 3.66513ZM9.0007 4.86158C6.58059 4.86158 4.61843 6.82373 4.61843 9.24385C4.61843 11.664 6.58059 13.6252 9.0007 13.6252C11.4208 13.6252 13.3823 11.664 13.3823 9.24385C13.3823 6.82373 11.4208 4.86158 9.0007 4.86158ZM9.00067 6.39937C10.5715 6.39937 11.8451 7.67281 11.8451 9.24385C11.8451 10.8147 10.5715 12.0883 9.00067 12.0883C7.42963 12.0883 6.15619 10.8147 6.15619 9.24385C6.15619 7.67281 7.42963 6.39937 9.00067 6.39937Z" fill="white"/>
+                </svg>
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8v-6.92h-2.4v-2.88H10V9.75c0-2.38 1.44-3.69 3.57-3.69 1.04 0 2.13.19 2.13.19v2.35H14.7c-1.24 0-1.63.77-1.63 1.56v1.87h2.8l-.45 2.88h-2.35v6.92c4.56-.93 8-4.96 8-9.8z"/>
+                </svg>
             </div>
         </div>
 
