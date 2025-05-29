@@ -48,6 +48,113 @@
         .swiper-pagination-bullet {
             display: none !important;
         }
+
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Construction Services Slider</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        .font-glancyr {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .font-hostgrotesk {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .slide-content {
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .swiper-pagination-bullet {
+            background: #e9ebcf;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #e9ebcf;
+            opacity: 1;
+        }
+
+        /* Mobile Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: #e9ebcf;
+        }
+
+        .timeline-item:last-child:before {
+            display: none;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: #e9ebcf;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Show mobile timeline on small screens */
+        @media (max-width: 767px) {
+            .desktop-slider {
+                display: none;
+            }
+            .mobile-timeline {
+                display: block;
+            }
+            #swiper-desktop {
+                display: none;
+            }
+        }
+
+        /* Show desktop slider on larger screens */
+        @media (min-width: 768px) {
+            .desktop-slider {
+                display: block;
+            }
+            .mobile-timeline {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-900">
@@ -262,7 +369,7 @@
         <div class="h-1 w-full bg-[#e9ebcf] mb-10 max-w-screen-2xl mx-auto"></div>
 
         <!-- Swiper Container -->
-        <div class="max-w-screen-2xl mx-auto">
+        <div id="swiper-desktop" class="max-w-screen-2xl mx-auto">
             <div class="swiper constructionSwiper">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
@@ -323,6 +430,52 @@
 
                 <!-- Pagination dots -->
                 <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="mobile-timeline max-w-lg mx-auto">
+            <div class="mb-8">
+                <h2 class="font-manrope text-2xl font-bold mb-4">Construcciones</h2>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number"></div>
+                <h3 class="font-manrope text-xl font-semibold mb-2">Cómputo y presupuesto</h3>
+                <p class="font-manrope text-gray-300 text-sm leading-relaxed">
+                    Realizamos un análisis detallado de los recursos necesarios para cada proyecto, elaborando presupuestos precisos que permiten una planificación clara y transparente desde el inicio.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number"></div>
+                <h3 class="font-manrope text-xl font-semibold mb-2">Dirección</h3>
+                <p class="font-manrope text-gray-300 text-sm leading-relaxed">
+                    Supervisamos cada etapa de la obra asegurando el cumplimiento de los planos, los tiempos de ejecución y los estándares de calidad establecidos.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number"></div>
+                <h3 class="font-manrope text-xl font-semibold mb-2">Administración</h3>
+                <p class="font-manrope text-gray-300 text-sm leading-relaxed">
+                    Gestionamos eficientemente los recursos humanos, materiales y financieros involucrados en la obra, optimizando los procesos y reduciendo costos innecesarios.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number"></div>
+                <h3 class="font-manrope text-xl font-semibold mb-2">Asesoramiento y compra de materiales</h3>
+                <p class="font-manrope text-gray-300 text-sm leading-relaxed">
+                    Ofrecemos asesoramiento personalizado para la selección de materiales, buscando siempre la mejor relación entre calidad, costo y sostenibilidad, con acceso a proveedores confiables.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number"></div>
+                <h3 class="font-manrope text-xl font-semibold mb-2">Garantía post venta</h3>
+                <p class="font-manrope text-gray-300 text-sm leading-relaxed">
+                    Nos comprometemos con la calidad y la satisfacción a largo plazo, ofreciendo garantía y soporte una vez finalizada la obra para resolver cualquier inconveniente que pudiera surgir.
+                </p>
             </div>
         </div>
     </section>
