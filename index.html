@@ -64,16 +64,6 @@
             flex-direction: column;
         }
 
-        .swiper-pagination-bullet {
-            background: #e9ebcf;
-            opacity: 0.5;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #e9ebcf;
-            opacity: 1;
-        }
-
         /* Mobile Timeline Styles */
         .timeline-item {
             position: relative;
@@ -113,9 +103,6 @@
 
         /* Show mobile timeline on small screens */
         @media (max-width: 767px) {
-            .desktop-slider {
-                display: none;
-            }
             .mobile-timeline {
                 display: block;
             }
@@ -126,9 +113,6 @@
 
         /* Show desktop slider on larger screens */
         @media (min-width: 768px) {
-            .desktop-slider {
-                display: block;
-            }
             .mobile-timeline {
                 display: none;
             }
@@ -149,8 +133,14 @@
 <header class="bg-black text-white relative" style="font-family: 'Manrope', sans-serif;">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-end items-center">
 
-        <div class="absolute left-6">
-            <a href="index.html" class="block w-[120px] h-[62px]">
+        <div class="absolute left-3 sm:left-6">
+            <a href="index.html" class="w-10 h-10 sm:hidden">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0V40H40V0H0ZM20.0796 6.24199C27.7094 6.24199 33.8957 12.4014 33.8957 20.0005C33.8957 27.5996 27.7094 33.759 20.0796 33.759C12.4497 33.759 6.26534 27.5996 6.26534 20.0005C6.26534 12.4014 12.4497 6.24199 20.0796 6.24199Z" fill="white"/>
+                </svg>
+            </a>
+
+            <a href="index.html" class="hidden sm:block w-[120px] h-[62px]">
                 <svg width="120" height="62" viewBox="0 0 120 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0.878128V61.1219H120V0.878128H0ZM30.1197 51.7209C18.6747 51.7209 9.39812 42.4442 9.39812 30.9993C9.39812 19.5543 18.6747 10.2777 30.1197 10.2777C41.5647 10.2777 50.8442 19.5543 50.8442 30.9993C50.8442 42.4442 41.5647 51.7209 30.1197 51.7209ZM118.297 59.4193H59.9993V2.5807H118.297V59.4207V59.4193Z" fill="white"/>
                     <path d="M106.455 36.6739L106.417 36.6031C105.594 35.0741 104.441 33.8735 102.964 33.0128C101.479 32.1463 99.7602 31.7225 97.8233 31.7225C95.8864 31.7225 94.1838 32.1506 92.6823 33.0128H92.6794C91.9402 33.4424 91.2806 33.9603 90.702 34.5577C90.1205 35.1551 89.62 35.8407 89.2005 36.606C88.3745 38.1234 87.9695 39.8751 87.9695 41.8439C87.9695 43.8126 88.376 45.5701 89.1976 47.1034L89.2005 47.1063L89.2034 47.1092C90.0424 48.6223 91.2025 49.8128 92.6808 50.6735H92.6837C94.1852 51.5371 95.9037 51.9638 97.8247 51.9638C99.7457 51.9638 101.48 51.5385 102.966 50.6735L103.034 50.633C103.755 50.2048 104.401 49.6971 104.966 49.1069C105.532 48.5196 106.014 47.8513 106.42 47.1078C107.265 45.573 107.678 43.814 107.678 41.8453C107.678 39.8766 107.278 38.1754 106.458 36.6739H106.455ZM92.934 45.2085C92.9152 45.168 92.8964 45.1304 92.8805 45.0899C92.8993 45.1304 92.9181 45.168 92.9369 45.2085L92.9687 45.2736C92.9586 45.2519 92.9441 45.2302 92.934 45.2085ZM102.37 44.9264L102.329 45.0074C101.901 45.8811 101.309 46.5436 100.549 47.0123C99.8122 47.4593 98.9197 47.6922 97.8507 47.6922C96.7818 47.6922 95.8748 47.4593 95.1211 47.0109C94.3877 46.5567 93.8091 45.9202 93.3839 45.0899L93.3433 45.0089C92.9181 44.1409 92.6967 43.0908 92.6967 41.8453C92.6967 40.5998 92.9181 39.5482 93.3433 38.6788L93.3839 38.5978C93.8091 37.7675 94.3877 37.1426 95.1182 36.7058L95.1211 36.7029L95.124 36.7C95.8791 36.2342 96.7832 35.9941 97.8522 35.9941C98.9212 35.9941 99.8108 36.2342 100.547 36.7L100.55 36.7029L100.556 36.7058C101.311 37.1556 101.904 37.8066 102.331 38.6788L102.371 38.7598C102.769 39.6119 102.977 40.6346 102.977 41.8439C102.977 43.0532 102.769 44.073 102.371 44.9264H102.37Z" fill="white"/>
@@ -422,19 +412,6 @@
         </div>
 
         <div class="mobile-timeline max-w-lg mx-auto">
-            <div class="mb-8">
-                <h3 class="text-white mb-4">Mobile-friendly (two lines on mobile):</h3>
-                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-10 gap-4">
-                    <h2 class="text-2xl md:text-3xl font-semibold">Conocé nuestros proyectos</h2>
-                    <a href="#" style="color: #A9B934; font-family: 'Host Grotesk', sans-serif;" class="text-2xl hover:underline inline-flex items-center">
-                        Ver todos
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
             <div class="timeline-item">
                 <div class="timeline-number"></div>
                 <h3 class="font-manrope text-xl font-semibold mb-2">Cómputo y presupuesto</h3>
@@ -528,7 +505,7 @@
 </section>
 
 <!-- Quote and Values Section -->
-<section style="font-family: 'Manrope', sans-serif;" class="bg-white text-black py-20 px-6 md:px-20">
+<section style="font-family: 'Manrope', sans-serif;" class="bg-white text-black md:py-20 px-6 md:px-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
         <!-- Left: Quote -->
@@ -579,7 +556,7 @@
                     </svg>
                     <div>
                         <h4 class="font-semibold text-lg">Innovadores</h4>
-                        <p class="text-gray-700 mt-1 text-sm">
+                        <p class="text-gray-700 mt-1 sm:mb-4 text-sm">
                             En MUZO diseñamos espacios que inspiran y emocionan. Nuestra arquitectura combina calidez, detalle e innovación para transformar ideas en lugares con alma. Creamos viviendas, locales y espacios industriales con una mirada sensible y comprometida, cuidando cada etapa del proceso. Porque sabemos que los espacios bien pensados pueden transformar lo cotidiano en momentos memorables.
                         </p>
                     </div>
@@ -784,7 +761,7 @@
             // Pagination
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true,
+                clickable: false,
             },
 
             // Effects and transitions
@@ -793,13 +770,13 @@
 
             // Free mode for smooth scrolling
             freeMode: {
-                enabled: true,
+                enabled: false,
                 sticky: false,
             },
 
             // Mouse wheel support
             mousewheel: {
-                releaseOnEdges: false,
+                releaseOnEdges: true,
             },
 
             // Keyboard control
