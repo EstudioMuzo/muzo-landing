@@ -45,28 +45,6 @@
             flex-direction: column;
         }
 
-        .swiper-pagination-bullet {
-            display: none !important;
-        }
-
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Construction Services Slider</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-        <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-        .font-glancyr {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-        }
-
         .font-manrope {
             font-family: 'Manrope', sans-serif;
         }
@@ -154,6 +132,14 @@
             .mobile-timeline {
                 display: none;
             }
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
         }
     </style>
 </head>
@@ -325,13 +311,18 @@
     <!-- Section title & tabs -->
     <div class="mb-10">
         <h2 style="font-family: 'Host Grotesk', sans-serif;" class="text-3xl font-semibold mb-6">Arquitectura</h2>
-        <div class="flex flex-wrap gap-4 text-gray-800 text-sm border-b pb-4">
-            <button onclick="showTab('planta')" id="tab-planta" class="text-green-700 font-medium border-b-2 border-green-700 pb-1">Diseño de planta</button>
-            <button onclick="showTab('fachada')" id="tab-fachada" class="hover:text-green-700">Fachada</button>
-            <button onclick="showTab('interiorismo')" id="tab-interiorismo" class="hover:text-green-700">Interiorismo</button>
-            <button onclick="showTab('ejecutivo')" id="tab-ejecutivo" class="hover:text-green-700">Proyecto ejecutivo</button>
-            <button onclick="showTab('obra')" id="tab-obra" class="hover:text-green-700">Dirección de obra</button>
-            <button onclick="showTab('renders')" id="tab-renders" class="hover:text-green-700">Renders y 3D</button>
+        <div class="flex gap-4 text-gray-800 text-sm pb-4 overflow-x-auto whitespace-nowrap no-scrollbar">
+            <button onclick="showTab('planta')" id="tab-planta" class="text-green-700 font-medium mr-4">Diseño de planta</button>
+            <span style="font-size: 24px; padding-right: 10px; padding-top: 2px">|</span>
+            <button onclick="showTab('fachada')" id="tab-fachada" class="hover:text-green-700 mr-4">Fachada</button>
+            <span style="font-size: 24px; padding-right: 10px; padding-top: 2px">|</span>
+            <button onclick="showTab('interiorismo')" id="tab-interiorismo" class="hover:text-green-700 mr-4">Interiorismo</button>
+            <span style="font-size: 24px; padding-right: 10px; padding-top: 2px">|</span>
+            <button onclick="showTab('ejecutivo')" id="tab-ejecutivo" class="hover:text-green-700 mr-4">Proyecto ejecutivo</button>
+            <span style="font-size: 24px; padding-right: 10px; padding-top: 2px">|</span>
+            <button onclick="showTab('obra')" id="tab-obra" class="hover:text-green-700 mr-4">Dirección de obra</button>
+            <span style="font-size: 24px; padding-right: 10px; padding-top: 2px">|</span>
+            <button onclick="showTab('renders')" id="tab-renders" class="hover:text-green-700 mr-4">Renders y 3D</button>
         </div>
     </div>
 
