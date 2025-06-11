@@ -451,7 +451,7 @@
 <section style="font-family: 'Manrope', sans-serif;" class="bg-black text-white py-16 px-6 md:px-20">
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-10 gap-4 scroll-animate fade-up">
         <h2 class="font-hostgrotesk text-2xl md:text-3xl font-semibold">Conocé nuestros proyectos</h2>
-        <a  href="#" style="color: #A9B934; font-family: 'Manrope', sans-serif; font-size: 20x;" class="hover:underline inline-flex items-center">
+        <a  href="ventas.html" style="color: #A9B934; font-family: 'Manrope', sans-serif; font-size: 20px;" class="hover:underline inline-flex items-center">
             Ver todos
             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -461,8 +461,10 @@
 
     <!-- Project Card 1 -->
     <div class="relative overflow-hidden mb-10 project-card project-entrance">
-        <img src="project1.png" style="width: 100%;" alt="Villa Rosa 155" class="mx-auto w-full h-[180px] xs:h-[220px] sm:h-[320px] md:h-[500px] lg:h-[600px] object-cover transition-all" />
-        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 sm:p-4 w-full">
+        <a href="ventas.html#villa-rosa">
+            <img src="project1.png" style="width: 100%;" alt="Villa Rosa 155" class="mx-auto w-full h-[180px] xs:h-[220px] sm:h-[320px] md:h-[500px] lg:h-[600px] object-cover transition-all" />
+        </a>
+            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 sm:p-4 w-full">
             <h3 class="text-base sm:text-lg font-semibold">Villa Rosa 155</h3>
             <span class="flex items-center gap-1">
                     <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -479,8 +481,10 @@
 
     <!-- Project Card 2 -->
     <div class="relative overflow-hidden mb-10 project-card project-entrance">
-        <img src="project2.png" style="width: 100%;" alt="Mulen 10" class="mx-auto w-full h-[180px] xs:h-[220px] sm:h-[320px] md:h-[500px] lg:h-[600px] object-cover transition-all" />
-        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 sm:p-4 w-full">
+        <a href="ventas.html#puelche">
+            <img src="project2.png" style="width: 100%;" alt="Mulen 10" class="mx-auto w-full h-[180px] xs:h-[220px] sm:h-[320px] md:h-[500px] lg:h-[600px] object-cover transition-all" />
+        </a>
+            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 sm:p-4 w-full">
             <h3 class="text-lg sm:text-lg font-semibold">Mulen 10</h3>
             <span class="flex items-center gap-1">
                 <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -942,7 +946,7 @@
         // Update content
         if (tab === 'planta') {
             document.getElementById('project-paragraph-1').innerHTML =
-                "Diseñar una planta es imaginar cómo se vive un espacio antes de que exista. Es pensar en recorridos, visuales, luz natural, proporciones, relaciones entre ambientes y su relación con el entorno. Cada espacio se adaptó a la forma del terreno, a su orientacion, sus arboles y un quincho existente el cual unificamos con la casa a traves de un patio seco y la piscina. <b>Sus dueños aman las curvas, lo organico y lo natural. Desde ese eje se planteó cada trazo de esta casa y cada decisión se tomó en conjunto con quienes van a habitarla, interpretando sus necesidades, sus modos de vivir y sus deseos.</b>";
+                "El anteproyecto es el primer paso en el proceso creativo. Es el momento de explorar, probar, y soñar. Desde las primeras charlas con nuestros clientes, escuchamos y entendemos que necesita, que busca y que sueña. Comenzamos con el diseño de plantas imaginando cómo se vive un espacio antes de que exista; es pensar en cómo se implanta la obra y su relación con el entorno, pensar en recorridos, relaciones entre ambientes, proporciones, visuales, luz natural. cada decisión se toma en conjunto con quienes van a habitarlo, no como una idea cerrada sino como una propuesta abierta a la evolución. Es una etapa flexible y creativa donde buscamos interpretar sus necesidades, sus modos de vivir y sus deseos.";
             document.getElementById('project-paragraph-2').textContent =
                 "";
             document.getElementById('project-image').src = "architecture-project.png";
@@ -950,7 +954,7 @@
 
         if (tab === 'modelado') {
             document.getElementById('project-paragraph-1').innerHTML =
-                "La fachada es la primera impresión y una declaración de identidad. En esta casa diseñamos un <b>revestimiento auténtico que refleja su carácter cálido y contemporáneo.</b> Tras una cuidadosa búsqueda de materiales, colores y texturas, dimos con una solución que combina fuerza y permanencia. Cada elemento exterior, desde los accesos hasta los canteros, se integró para aportar calidez, privacidad y coherencia al diseño.";
+                "Con las primeras definiciones en planta, comenzamos a modelar. El modelado es la herramienta que nos va a acompañar a lo largo de todo el proceso de proyecto y luego construcción de la obra. Es una herramienta esencial para anticipar cómo se va a ver, sentir y vivir una casa antes de que exista; esta nos permite explorar formas, conceptos, materialidades, combinaciones y nos permite tomar decisiones con claridad y confianza. Este es el punto donde damos forma e identidad a la obra desde su volumetría hasta el diseño de fachadas. En MUZO creemos que diseñar también es imaginar juntos. Generamos renders realistas que ayudan a hacer visible eso que todavía está por construirse.";
             document.getElementById('project-paragraph-2').textContent = "";
             document.getElementById('project-image').src = "modelado.png";
         }
@@ -965,7 +969,8 @@
 
         if (tab === 'interiorismo') {
             document.getElementById('project-paragraph-1').innerHTML =
-                "La técnica también es parte del diseño. <b>Detrás de cada espacio bien resuelto hay un proyecto ejecutivo preciso, donde cada sistema —eléctrico, sanitario o estructural— se piensa con el mismo cuidado que lo estético.</b> La iluminación, en particular, tiene un rol clave: crea atmósferas, resalta materiales y acompaña la experiencia del espacio. Cada capa del proyecto se cuida para que la arquitectura funcione, perdure y se viva con confianza.";
+                "El interior es donde la arquitectura se vuelve experiencia. En cada casa que diseñamos, como en casas ya construidas, el interiorismo es una extensión natural del proyecto: define cómo se vive, se recorre y se siente cada espacio. Trabajamos con materiales nobles, texturas cálidas y decisiones pensadas al detalle para crear ambientes que inviten a habitar, a quedarse. Cada elección –desde el artefacto de iluminación hasta los muebles a medida– refleja una búsqueda estética, funcional y sobre todo, emocional. A su vez, buscamos que la base de cada decisión este fundada en los modos de vivir, rutinas y deseos de quien lo habite." +
+                "Comenzamos con un modelado que nos ayude a visualizar la espacialidad ya construida o por construirse. A partir de ahí diseñamos el mobiliario, elegimos un estilo, materiales y gama de colores. A su vez, hacemos mucho hincapié en la iluminación como parte fundamental de cómo se habita un espacio. Buscamos generar espacios únicos, con personalidad, identidad; siempre en sintonía con las posibilidades y requerimientos de nuestros clientes.";
             document.getElementById('project-paragraph-2').textContent = "";
             document.getElementById('project-image').src = "interiorismo.png";
         }
