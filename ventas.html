@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería | MUZO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @font-face {
+      font-family: 'Glancyr';
+      src: url('Glancyr.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    .font-manrope {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .font-hostgrotesk {
+      font-family: 'Host Grotesk', sans-serif;
+      font-weight: 600;
+    }
+
+    body {
+      /* Subtle background circles pattern */
+      background-color: #f5f5f5;
+      background-image:
+              radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+              radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 120px 120px;
+      background-position: 0 0, 60px 60px;
+    }
+
+    .property-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .property-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .property-image {
+      transition: transform 0.5s ease;
+    }
+
+    .property-card:hover .property-image {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- Header -->
+<header class="bg-black text-white relative" style="font-family: 'Manrope', sans-serif;" x-data="{ mobileMenuOpen: false }">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-end items-center">
+
+    <div class="absolute left-3 sm:left-6">
+      <a href="index.html" class="w-10 h-10 sm:hidden">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V40H40V0H0ZM20.0796 6.24199C27.7094 6.24199 33.8957 12.4014 33.8957 20.0005C33.8957 27.5996 27.7094 33.759 20.0796 33.759C12.4497 33.759 6.26534 27.5996 6.26534 20.0005C6.26534 12.4014 12.4497 6.24199 20.0796 6.24199Z" fill="white"/>
+        </svg>
+      </a>
+
+      <a href="index.html" class="hidden sm:block w-[120px] h-[62px]">
+        <svg width="120" height="62" viewBox="0 0 120 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0.878128V61.1219H120V0.878128H0ZM30.1197 51.7209C18.6747 51.7209 9.39812 42.4442 9.39812 30.9993C9.39812 19.5543 18.6747 10.2777 30.1197 10.2777C41.5647 10.2777 50.8442 19.5543 50.8442 30.9993C50.8442 42.4442 41.5647 51.7209 30.1197 51.7209ZM118.297 59.4193H59.9993V2.5807H118.297V59.4207V59.4193Z" fill="white"/>
+          <path d="M106.455 36.6739L106.417 36.6031C105.594 35.0741 104.441 33.8735 102.964 33.0128C101.479 32.1463 99.7602 31.7225 97.8233 31.7225C95.8864 31.7225 94.1838 32.1506 92.6823 33.0128H92.6794C91.9402 33.4424 91.2806 33.9603 90.702 34.5577C90.1205 35.1551 89.62 35.8407 89.2005 36.606C88.3745 38.1234 87.9695 39.8751 87.9695 41.8439C87.9695 43.8126 88.376 45.5701 89.1976 47.1034L89.2005 47.1063L89.2034 47.1092C90.0424 48.6223 91.2025 49.8128 92.6808 50.6735H92.6837C94.1852 51.5371 95.9037 51.9638 97.8247 51.9638C99.7457 51.9638 101.48 51.5385 102.966 50.6735L103.034 50.633C103.755 50.2048 104.401 49.6971 104.966 49.1069C105.532 48.5196 106.014 47.8513 106.42 47.1078C107.265 45.573 107.678 43.814 107.678 41.8453C107.678 39.8766 107.278 38.1754 106.458 36.6739H106.455ZM92.934 45.2085C92.9152 45.168 92.8964 45.1304 92.8805 45.0899C92.8993 45.1304 92.9181 45.168 92.9369 45.2085L92.9687 45.2736C92.9586 45.2519 92.9441 45.2302 92.934 45.2085ZM102.37 44.9264L102.329 45.0074C101.901 45.8811 101.309 46.5436 100.549 47.0123C99.8122 47.4593 98.9197 47.6922 97.8507 47.6922C96.7818 47.6922 95.8748 47.4593 95.1211 47.0109C94.3877 46.5567 93.8091 45.9202 93.3839 45.0899L93.3433 45.0089C92.9181 44.1409 92.6967 43.0908 92.6967 41.8453C92.6967 40.5998 92.9181 39.5482 93.3433 38.6788L93.3839 38.5978C93.8091 37.7675 94.3877 37.1426 95.1182 36.7058L95.1211 36.7029L95.124 36.7C95.8791 36.2342 96.7832 35.9941 97.8522 35.9941C98.9212 35.9941 99.8108 36.2342 100.547 36.7L100.55 36.7029L100.556 36.7058C101.311 37.1556 101.904 37.8066 102.331 38.6788L102.371 38.7598C102.769 39.6119 102.977 40.6346 102.977 41.8439C102.977 43.0532 102.769 44.073 102.371 44.9264H102.37Z" fill="white"/>
+          <path d="M77.3243 47.6386L87.1868 35.5167V32.045H70.8004V36.049H80.5356L70.7354 48.171V51.6426H87.22V47.6386H77.3243Z" fill="white"/>
+          <path d="M107.651 10.2777V22.1407C107.651 23.8693 107.331 25.3448 106.671 26.5382L106.669 26.5411C106.016 27.7012 105.129 28.5836 104.011 29.1738H104.008V29.1767C102.905 29.7394 101.692 30.0185 100.378 30.0185C99.0626 30.0185 97.8664 29.7394 96.7916 29.1738L96.7858 29.1709C95.7356 28.5966 94.8937 27.7504 94.2645 26.6438L94.2052 26.5353V26.5324C93.5615 25.3419 93.2505 23.8693 93.2505 22.1407V10.2777H97.2501V22.1653C97.2501 23.5482 97.5583 24.5 98.0964 25.1032C98.6533 25.7122 99.4228 26.0319 100.45 26.0319C101.477 26.0319 102.238 25.7093 102.78 25.1061L102.783 25.1032V25.1003C103.337 24.5 103.651 23.5468 103.651 22.1639V10.2763H107.651V10.2777Z" fill="white"/>
+          <path d="M91.6296 10.2777V29.7958H87.3464V19.1161L82.8737 29.7958H79.5597L75.0596 19.0944V29.7958H70.7764V10.2777H75.6121L81.2579 23.7782L86.8199 10.2777H91.6296Z" fill="white"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="hidden md:flex gap-6 text-sm items-center">
+      <a href="galeria.html" class="hover:text-gray-400">Galería</a>
+      <a href="#construccion" class="hover:text-gray-400">Construcción</a>
+      <a href="#arquitectura" class="hover:text-gray-400">Arquitectura y diseño</a>
+      <a href="ventas.html" class="hover:text-gray-400">Venta</a>
+      <a href="#nosotros" class="hover:text-gray-400">Sobre nosotros</a>
+      <a href="#contactanos" class="bg-white text-black rounded-full px-4 py-3 hover:bg-gray-200 transition animated-button">Contactanos</a>
+    </nav>
+
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-md">
+      <!-- Hamburger Icon -->
+      <svg x-show="!mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 rotate-90" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <!-- Close Icon -->
+      <svg x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 rotate-90" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div x-show="mobileMenuOpen"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 -translate-y-4"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 -translate-y-4"
+       @click.away="mobileMenuOpen = false"
+       class="md:hidden bg-gray-800">
+    <nav class="px-6 py-4 space-y-1 bg-black">
+      <a href="galeria.html" @click="mobileMenuOpen = false" class="block py-3 text-lg hover:text-gray-400 transition-colors border-b border-gray-700">Galería</a>
+      <a href="index.html#construccion" @click="mobileMenuOpen = false" class="block py-3 text-lg hover:text-gray-400 transition-colors border-b border-gray-700">Construcción</a>
+      <a href="index.html#arquitectura" @click="mobileMenuOpen = false" class="block py-3 text-lg hover:text-gray-400 transition-colors border-b border-gray-700">Arquitectura y diseño</a>
+      <a href="#" @click="mobileMenuOpen = false" class="block py-3 text-lg hover:text-gray-400 transition-colors border-b border-gray-700">Venta</a>
+      <a href="index.html#nosotros" @click="mobileMenuOpen = false" class="block py-3 text-lg hover:text-gray-400 transition-colors">Sobre nosotros</a>
+      <a href="index.html#contactanos" @click="mobileMenuOpen = false" class="block mt-4 bg-white text-black text-center rounded-full px-6 py-3 hover:bg-gray-200 transition-colors">Contactanos</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Section -->
+<main class="font-manrope max-w-7xl mx-auto px-4 lg:px-6 pt-14 pb-24">
+
+  <!-- Unidades en Venta Section -->
+  <section class="mb-16">
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12">
+      <div>
+        <h1 class="text-4xl lg:text-6xl font-light text-gray-800 mb-4">Unidades<br>en Venta</h1>
+      </div>
+      <div class="lg:text-right max-w-md">
+        <p class="text-gray-600 text-sm lg:text-base leading-relaxed">
+          Viviendas únicas, listas para habitar. Diseñadas con calidad, confort y una estética que perdura. Consultanos por disponibilidad.
+        </p>
+      </div>
+    </div>
+
+    <!-- Disponibles Section -->
+    <div class="bg-black text-white px-6 lg:px-12 py-12 mb-16 rounded-lg">
+      <h2 class="text-3xl lg:text-4xl font-light mb-12">Disponibles</h2>
+
+      <!-- Property List -->
+      <div class="space-y-12">
+
+        <!-- Mulen 10 -->
+        <div class="property-card flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80"
+                   alt="Mulen 10"
+                   class="property-image w-full h-64 lg:h-80 object-cover">
+            </div>
+          </div>
+          <div class="lg:w-1/2 space-y-4 flex flex-col justify-center">
+            <h3 class="text-2xl lg:text-3xl font-light">Mulen 10</h3>
+
+            <div class="flex flex-wrap gap-6 text-sm text-gray-300">
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>190 m²</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>4 ambientes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>1 piso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>3 baños</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Mapuche country club, Pilar</span>
+            </div>
+
+            <p class="text-gray-300 text-sm leading-relaxed">
+              A estrenar. Calefacción por radiadores, aberturas dvh, tres dormitorios, uno en suite con vestidor, toilette, cocina integrada al living comedor, lavadero, galería con parrilla, parque con pileta, cochera techada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Nahuel 04 -->
+        <div class="property-card flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+                   alt="Nahuel 04"
+                   class="property-image w-full h-64 lg:h-80 object-cover">
+            </div>
+          </div>
+          <div class="lg:w-1/2 space-y-4 flex flex-col justify-center">
+            <h3 class="text-2xl lg:text-3xl font-light">Nahuel 04</h3>
+
+            <div class="flex flex-wrap gap-6 text-sm text-gray-300">
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>175 m²</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>4 ambientes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>1 piso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>3 baños</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-300">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Mapuche country club, Pilar</span>
+            </div>
+
+            <p class="text-gray-300 text-sm leading-relaxed">
+              A estrenar. Calefacción por radiadores, aberturas dvh, tres dormitorios, uno en suite con vestidor, toilette, cocina integrada al living comedor, lavadero, galería con parrilla, parque con pileta, cochera techada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Vendidas Section -->
+    <div class="bg-gray-100 px-6 lg:px-12 py-12 rounded-lg">
+      <h2 class="text-3xl lg:text-4xl font-light mb-12 text-gray-800">Vendidas</h2>
+
+      <!-- Property List -->
+      <div class="space-y-12">
+
+        <!-- Villa rosa 155 -->
+        <div class="property-card flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                   alt="Villa rosa 155"
+                   class="property-image w-full h-64 lg:h-80 object-cover opacity-75">
+            </div>
+          </div>
+          <div class="lg:w-1/2 space-y-4 flex flex-col justify-center">
+            <h3 class="text-2xl lg:text-3xl font-light text-gray-700">Villa rosa 155</h3>
+
+            <div class="flex flex-wrap gap-6 text-sm text-gray-500">
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>200 m²</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>4 ambientes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>1 piso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>3 baños</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Barrio cerrado Villa Rosa, Pilar</span>
+            </div>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Calefacción por losa radiante, aberturas dvh, tres dormitorios, uno en suite con vestidor, toilette, cocina integrada al living comedor, lavadero, galería con parrilla, parque con pileta, cochera techada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Santa Emilia 211 -->
+        <div class="property-card flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                   alt="Santa Emilia 211"
+                   class="property-image w-full h-64 lg:h-80 object-cover opacity-75">
+            </div>
+          </div>
+          <div class="lg:w-1/2 space-y-4 flex flex-col justify-center">
+            <h3 class="text-2xl lg:text-3xl font-light text-gray-700">Santa Emilia 211</h3>
+
+            <div class="flex flex-wrap gap-6 text-sm text-gray-500">
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>160 m²</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>4 ambientes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>1 piso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-green-400">◉</span>
+                <span>3 baños</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Pilar del Este, Pilar</span>
+            </div>
+
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Calefacción por losa radiante, aberturas dvh, tres dormitorios, uno en suite con vestidor, toilette, cocina integrada al living comedor, lavadero, galería con parrilla, parque con pileta, cochera techada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</main>
+</body>
+</html>
