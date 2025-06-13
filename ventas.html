@@ -206,7 +206,7 @@
     <div class="space-y-12">
 
       <!-- Mulen 10 -->
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal1')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria1.webp"
@@ -262,7 +262,7 @@
       </div>
 
       <!-- Nahuel 04 -->
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal2')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria2.webp"
@@ -330,7 +330,7 @@
     <div class="space-y-12">
 
       <!-- Villa rosa 155 -->
-      <div id="villa-rosa-155" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal3')" id="villa-rosa-155" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria3.webp"
@@ -385,7 +385,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal4')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria4.webp"
@@ -440,7 +440,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal5')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria5.webp"
@@ -495,7 +495,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal6')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria6.webp"
@@ -550,7 +550,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal7')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria7.webp"
@@ -605,7 +605,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal8')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria8.webp"
@@ -660,7 +660,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal9')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria9.webp"
@@ -715,7 +715,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal10')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria10.webp"
@@ -770,7 +770,7 @@
         </div>
       </div>
 
-      <div class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
+      <div onclick="openGallery('modal11')" class="property-card flex flex-col lg:flex-row gap-8 animate-on-scroll fade-up stagger-delay-1">
         <div class="lg:w-1/2">
           <div class="overflow-hidden rounded-lg animate-on-scroll scale-up stagger-delay-2">
             <img src="galeria11.webp"
@@ -984,6 +984,57 @@
       }
     };
   }
+
+  const galerias = {
+    modal1: ["galeria1.webp", "modal1-1.webp", "modal1-2.webp", "modal1-3.webp", "modal1-4.webp"],
+    modal2: ["galeria2.webp", "modal2-1.webp"],
+    modal3: ["galeria3.webp", "modal3-1.webp", "modal3-2.webp", "modal3-3.webp", "modal3-4.webp"],
+    modal4: ["galeria4.webp", "modal4-1.webp", "modal4-2.webp", "modal4-3.webp", "modal4-4.webp"],
+    modal5: ["galeria5.webp", "modal4-1.webp", "modal4-2.webp", "modal4-3.webp", "modal4-4.webp"],
+    modal6: ["galeria6.webp", "modal6-1.webp", "modal6-2.webp"],
+    modal7: ["galeria7.webp", "modal7-1.webp", "modal7-2.webp"],
+    modal8: ["galeria8.webp", "modal8-1.webp", "modal8-2.webp", "modal8-3.webp", "modal8-4.webp"],
+    modal9: ["galeria9.webp", "modal9-1.webp", "modal9-2.webp"],
+    modal10: ["galeria10.webp", "modal10-1.webp", "modal10-2.webp", "modal10-3.webp", "modal10-4.webp"],
+    modal11: ["galeria11.webp", "modal11-1.webp", "modal11-2.webp", "modal11-3.webp", "modal11-4.webp"],
+    modal12: ["galeria12.webp", "modal12-1.webp", "modal12-2.webp"],
+  };
+
+  let currentGallery = [];
+
+  function openGallery(galleryKey) {
+    console.log(galleryKey);
+    currentGallery = galerias[galleryKey];
+    openModal(0);
+  }
+
+  function openModal(idx) {
+    const modal = document.getElementById('galleryModal');
+    const mainImg = document.getElementById('modalMainImg');
+    const thumbs = document.getElementById('modalThumbs');
+    modal.classList.add('open');
+    mainImg.src = currentGallery[idx];
+
+    thumbs.innerHTML = currentGallery.map((src, i) =>
+            `<img src="${src}" class="${i === idx ? 'selected' : ''}" onclick="switchImg(${i})">`
+    ).join('');
+  }
+
+  function closeModal() {
+    document.getElementById('galleryModal').classList.remove('open');
+  }
+
+  function switchImg(idx) {
+    const mainImg = document.getElementById('modalMainImg');
+    mainImg.src = currentGallery[idx];
+    document.querySelectorAll('#modalThumbs img').forEach((img, i) => {
+      img.classList.toggle('selected', i === idx);
+    });
+  }
+
+  document.getElementById('galleryModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
 </script>
 
 </body>
