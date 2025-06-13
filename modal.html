@@ -82,14 +82,6 @@
 </head>
 <body>
 <h2>Galería</h2>
-<div class="gallery-thumbs">
-  <img src="galeria4.png" alt="1" onclick="openModal(0)">
-  <img src="galeria5.png" alt="2" onclick="openModal(1)">
-  <img src="galeria6.png" alt="3" onclick="openModal(2)">
-  <img src="galeria7.png" alt="4" onclick="openModal(3)">
-  <img src="galeria8.png" alt="5" onclick="openModal(3)">
-</div>
-
 <!-- Modal -->
 <div class="modal" id="galleryModal">
   <div class="modal-content">
@@ -99,28 +91,39 @@
   </div>
 </div>
 
+<script src="./modal.html"></script>
+
 <script>
-  // Tus imágenes
-  const images = [
-    "galeria4.png",
-    "galeria5.png",
-    "galeria6.png",
-    "galeria7.png",
-    "galeria8.png",
-  ];
+  const galerias = {
+    modal1: ["galeria1.png", "modal1-1.png", "modal1-2.png", "modal1-3.png", "modal1-4.png"],
+    modal2: ["galeria7.png", "galeria8.png", "galeria9.png", "galeria10.png"],
+    modal3: ["galeria11.png", "galeria12.png"],
+    modal4: ["galeria11.png", "galeria12.png"],
+    modal5: ["galeria11.png", "galeria12.png"],
+    modal6: ["galeria11.png", "galeria12.png"],
+    modal7: ["galeria11.png", "galeria12.png"],
+    modal9: ["galeria11.png", "galeria12.png"],
+    modal10: ["galeria11.png", "galeria12.png"],
+    modal11: ["galeria11.png", "galeria12.png"],
+  };
+
+  let currentGallery = [];
+
+  function openGallery(galleryKey) {
+    currentGallery = galerias[galleryKey];
+    openModal(0);
+  }
 
   function openModal(idx) {
     const modal = document.getElementById('galleryModal');
     const mainImg = document.getElementById('modalMainImg');
     const thumbs = document.getElementById('modalThumbs');
     modal.classList.add('open');
-    mainImg.src = images[idx];
+    mainImg.src = currentGallery[idx];
 
-    // Renderiza thumbs en modal
-    thumbs.innerHTML = images.map((src, i) =>
-            `<img src="${src}" class="${i === idx ? 'selected' : ''}" onclick="switchImg(${i})" alt="">`
+    thumbs.innerHTML = currentGallery.map((src, i) =>
+            `<img src="${src}" class="${i === idx ? 'selected' : ''}" onclick="switchImg(${i})">`
     ).join('');
-    mainImg.setAttribute("data-idx", idx);
   }
 
   function closeModal() {
@@ -128,14 +131,13 @@
   }
 
   function switchImg(idx) {
-    document.getElementById('modalMainImg').src = images[idx];
-    document.getElementById('modalMainImg').setAttribute("data-idx", idx);
+    const mainImg = document.getElementById('modalMainImg');
+    mainImg.src = currentGallery[idx];
     document.querySelectorAll('#modalThumbs img').forEach((img, i) => {
       img.classList.toggle('selected', i === idx);
     });
   }
 
-  // Cierra el modal al clickear afuera del contenido
   document.getElementById('galleryModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
