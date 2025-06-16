@@ -186,6 +186,55 @@
     .modal-thumbs img.selected {
       box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
     }
+    /* Mobile-specific styles */
+    @media (max-width: 767px) {
+      .modal-content {
+        height: 50vh; /* Reduced height for mobile */
+        padding: 5px;
+        background-color: black;
+      }
+
+      .modal-content img#modalMainImg {
+        height: calc(100% - 60px); /* Less height to make room for dots */
+        margin-bottom: 10px;
+        touch-action: pan-y; /* Allow vertical scrolling but prevent horizontal */
+      }
+
+      .modal-thumbs {
+        display: none; /* Hide thumbnails on mobile */
+      }
+
+      /* Dots navigation for mobile */
+      .dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+        background: white;
+      }
+
+      .dot.active {
+        background: #A9B934;
+      }
+
+      /* Navigation arrows for mobile */
+    }
+
+    /* Desktop styles - ensure dots are hidden */
+    @media (min-width: 768px) {
+      .dots-container {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body class="font-sans" x-data="scrollAnimations()">
@@ -195,6 +244,7 @@
     <button class="close-btn" onclick="closeModal()">&times;</button>
     <img id="modalMainImg" src="" alt="imagen grande">
     <div class="modal-thumbs" id="modalThumbs"></div>
+    <div id="dotsContainer" class="dots-container"></div>
   </div>
 </div>
 
@@ -1033,10 +1083,21 @@
 </footer>
 
 <script>
+  // Mobile detection and variables
+  let currentIndex = 0;
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+  let currentGallery = [];
+
+  function isMobile() {
+    return window.innerWidth <= 767;
+  }
+
+  // Scroll animations
   function scrollAnimations() {
     return {
       init() {
-        // Initial setup
         this.setupScrollObserver();
       },
 
@@ -1056,7 +1117,6 @@
           });
         }, options);
 
-        // Observe all elements with animation classes
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
           observer.observe(el);
         });
@@ -1064,6 +1124,7 @@
     };
   }
 
+  // Gallery data
   const galerias = {
     modal1: ["galeria1.webp", "modal1-1.webp", "modal1-2.webp", "modal1-3.webp", "modal1-4.webp"],
     modal2: ["galeria2.webp", "modal2-1.webp"],
@@ -1079,40 +1140,133 @@
     modal12: ["galeria12.webp", "modal12-1.webp", "modal12-2.webp"],
   };
 
-  let currentGallery = [];
-
+  // Gallery functions
   function openGallery(galleryKey) {
     console.log(galleryKey);
     currentGallery = galerias[galleryKey];
-    openModal(0);
+    currentIndex = 0;
+    openModal();
   }
 
-  function openModal(idx) {
+  function openModal() {
     const modal = document.getElementById('galleryModal');
-    const mainImg = document.getElementById('modalMainImg');
-    const thumbs = document.getElementById('modalThumbs');
     modal.classList.add('open');
-    mainImg.src = currentGallery[idx];
+    updateModalContent();
 
-    thumbs.innerHTML = currentGallery.map((src, i) =>
-            `<img src="${src}" class="${i === idx ? 'selected' : ''}" onclick="switchImg(${i})">`
-    ).join('');
+    if (isMobile()) {
+      setupMobileNavigation();
+    }
   }
 
   function closeModal() {
     document.getElementById('galleryModal').classList.remove('open');
+    if (isMobile()) {
+      removeMobileNavigation();
+    }
   }
 
-  function switchImg(idx) {
+  function updateModalContent() {
     const mainImg = document.getElementById('modalMainImg');
-    mainImg.src = currentGallery[idx];
-    document.querySelectorAll('#modalThumbs img').forEach((img, i) => {
-      img.classList.toggle('selected', i === idx);
-    });
+    const thumbs = document.getElementById('modalThumbs');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    mainImg.src = currentGallery[currentIndex];
+
+    if (isMobile()) {
+      // Update dots for mobile
+      dotsContainer.innerHTML = currentGallery.map((_, i) =>
+              `<div class="dot ${i === currentIndex ? 'active' : ''}" onclick="goToImage(${i})"></div>`
+      ).join('');
+    } else {
+      // Update thumbnails for desktop
+      thumbs.innerHTML = currentGallery.map((src, i) =>
+              `<img src="${src}" class="${i === currentIndex ? 'selected' : ''}" onclick="goToImage(${i})">`
+      ).join('');
+    }
   }
 
+  function goToImage(index) {
+    currentIndex = index;
+    updateModalContent();
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    updateModalContent();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateModalContent();
+  }
+
+  // Mobile navigation setup
+  function setupMobileNavigation() {
+    const mainImg = document.getElementById('modalMainImg');
+
+    mainImg.addEventListener('touchstart', handleTouchStart, { passive: true });
+    mainImg.addEventListener('touchmove', handleTouchMove, { passive: true });
+    mainImg.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
+
+  function removeMobileNavigation() {
+    const mainImg = document.getElementById('modalMainImg');
+
+    mainImg.removeEventListener('touchstart', handleTouchStart);
+    mainImg.removeEventListener('touchmove', handleTouchMove);
+    mainImg.removeEventListener('touchend', handleTouchEnd);
+  }
+
+  // Touch event handlers
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }
+
+  function handleTouchMove(e) {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const deltaX = currentX - startX;
+    const threshold = 50;
+
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX > 0) {
+        prevImage();
+      } else {
+        nextImage();
+      }
+    }
+  }
+
+  // Event listeners
   document.getElementById('galleryModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('galleryModal').classList.contains('open')) return;
+
+    if (e.key === 'ArrowLeft') {
+      prevImage();
+    } else if (e.key === 'ArrowRight') {
+      nextImage();
+    } else if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (document.getElementById('galleryModal').classList.contains('open')) {
+      updateModalContent();
+    }
   });
 </script>
 
