@@ -192,7 +192,7 @@
             display: flex;
             gap: 10px;
             width: 100%; /* ahora cubre todo el ancho de la imagen principal */
-            justify-content: space-between; /* distribución uniforme */
+            justify-content: flex-start; /* distribución uniforme */
         }
         .modal-thumbs img {
             flex: 1;
@@ -201,6 +201,7 @@
             cursor: pointer;
             border: none;
             transition: 0.3s;
+            width: 260px;
         }
         .modal-thumbs img.selected {
             box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
