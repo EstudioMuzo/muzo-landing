@@ -333,12 +333,14 @@
 
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-md">
             <!-- Hamburger Icon -->
-            <svg x-show="!mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 rotate-90" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg x-show="!mobileMenuOpen"
+                 width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
             <!-- Close Icon -->
-            <svg x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 rotate-0" x-transition:leave-end="opacity-0 rotate-90" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg x-show="mobileMenuOpen"
+                 width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
