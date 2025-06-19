@@ -204,7 +204,7 @@
             width: 260px;
         }
         .modal-thumbs img.selected {
-            box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+            box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
         }
 
         /* Mobile-specific styles */
@@ -261,7 +261,7 @@
 <body class="font-sans text-gray-900">
 
 <div class="modal" id="galleryModal">
-    <div class="modal-content">
+    <div class="modal-content md:w-3/5">
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <img id="modalMainImg" src="" alt="imagen grande">
         <div class="modal-thumbs" id="modalThumbs"></div>
